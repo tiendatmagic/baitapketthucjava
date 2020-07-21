@@ -13,7 +13,7 @@ public class mangmotchieu{
 		int [] arr= nmang(n);
 		
 		xmang(arr);
-
+		daonguoc(arr, n);
 		System.out.println("\nNhap so can tim kiem");
 		int k = new Scanner(System.in).nextInt();
 			if(test(arr, k))
@@ -35,12 +35,23 @@ public class mangmotchieu{
 	}
 	
 	public static void xmang(int [] arr) {
-		System.out.println("Xuat mang:");
-        for (int i = 0; i < arr.length; i++) {
+		System.out.println("\nXuat mang:");
+        for (int i = arr.length - 1; i >= 0; i--) {
             System.out.print(arr[i] + " ");
         }
     }
 	
+	public static void daonguoc(int []a, int n) {
+			
+
+		for(int i=0;i<=n/2;i++)
+		{
+			int temp=a[i];
+			a[i]=a[n-1-i];
+			a[n-1-i]=temp;
+		}
+	}
+
 	public static boolean test(int []a, int n) {
 			
 			for(int i=0; i<a.length; i++) {
